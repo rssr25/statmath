@@ -29,4 +29,9 @@ class rtsa():
         return mse
 
 class mathstats():
-    pass
+    
+    def __init__(self):
+        super.__init__()
+        
+    def firstProdedure():
+        pass
