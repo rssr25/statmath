@@ -5,4 +5,9 @@ setup(
         description='regression and time series analysis and mathematical statistics library for students and professionals', 
         py_modules=["rtsa", "statistical"],
         package_dir={'': 'src'},
+        extras_require={
+            "dev":[
+                "pytest>=3.7",
+            ],
+        },
     )
