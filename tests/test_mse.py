@@ -7,7 +7,13 @@ def test_mse():
     assert rtsa.mse(a, b) == 25
     
 def test_l2norm():
-    pass
+    a = 5
+    b = 10
+    
+    assert rtsa.l2norm(a, b) == 25
     
 def test_lnorm():
-    pass
+    a = 5
+    b = 10
+    
+    assert rtsa.lnorm(a, b) == 5
