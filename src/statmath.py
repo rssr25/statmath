@@ -12,6 +12,9 @@ class rtsa():
     @staticmethod
     def l2Norm(a, b) -> float:
         return (a-b)**2
+        
+    def lnorm(a, b) -> float:
+        return (a - b)
 
     @staticmethod
     def mse(estimate: list, original: list) -> float:
