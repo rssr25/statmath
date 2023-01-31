@@ -6,14 +6,12 @@ def test_mse():
 
     assert rtsa.mse(a, b) == 25
     
-def test_l2norm():
-    a = 5
-    b = 10
+def test_l2Norm():
+    a = [1, 2, 2]
     
-    assert rtsa.l2norm(a, b) == 25
+    assert rtsa.l2Norm(a) == 3
     
-def test_lnorm():
-    a = 5
-    b = 10
+def test_lNorm():
+    a = [1, 2, 3, -4, 5]
     
-    assert rtsa.l1norm(a, b) == 5
+    assert rtsa.l1Norm(a) == 7
