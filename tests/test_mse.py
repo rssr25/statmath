@@ -1,4 +1,4 @@
-from statmath import rtsa
+from statmath import rtsa, basic
 
 def test_mse():
     a = [1, 2, 3, 4, 5]
@@ -9,9 +9,16 @@ def test_mse():
 def test_l2Norm():
     a = [1, 2, 2]
     
-    assert rtsa.l2Norm(a) == 3
+    assert basic.l2Norm(a) == 3
     
 def test_lNorm():
     a = [1, 2, 3, -4, 5]
     
-    assert rtsa.l1Norm(a) == 7
+    assert basic.l1Norm(a) == 7
+
+#TODO: test sample mean and variance
+def test_sampleVariance():
+    pass
+
+def test_sampleMean():
+    pass

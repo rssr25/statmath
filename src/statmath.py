@@ -5,15 +5,16 @@ Description: Regression and time series analysis and Mathematical Statistics lib
 '''
 import math
 
-class rtsa():
-    
+class basics():
+
     def __init__(self):
         super.__init__()
-
+    
     @staticmethod
     def l2Norm(v: list) -> float:
         return math.sqrt(sum([(i)**2 for i in v]))
-        
+    
+    @staticmethod
     def l1Norm(v:list) -> float:
         '''
         Description: L1 norm of a vector
@@ -21,6 +22,38 @@ class rtsa():
         output: l1 norm of the vector
         '''
         return abs(sum(v))
+
+    @staticmethod
+    def sampleMean(v: list) -> float:
+        '''
+        Description: Calculates sample mean of list of data points
+        Input: v: list of data
+        Output: Sample mean of the data
+        '''
+        return sum(v)/len(v)
+    
+    @staticmethod
+    def sampleVariance(v:list, estimatedData: bool) -> float:
+        '''
+        Description: Calculates sample variance of list of data points
+        Input: v: list of data, estimatedData: True/False if the data in list is estimated or not
+        Output: Sample variance of the data
+        '''
+        mean = basics.sampleMean(v)
+        if estimatedData:
+            N = len(v) - 1 #sample variance when data is estimated
+        else:
+            N = len(v)
+        subs = [math.pow(i - mean, 2) for i in v]
+        return (1/N)*sum(subs)
+
+    
+
+
+class rtsa():
+    
+    def __init__(self):
+        super.__init__()
 
     @staticmethod
     def mse(estimate: list, original: list) -> float:
