@@ -16,4 +16,4 @@ def test_lnorm():
     a = 5
     b = 10
     
-    assert rtsa.lnorm(a, b) == 5
+    assert rtsa.l1norm(a, b) == 5
