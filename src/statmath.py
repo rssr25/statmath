@@ -6,10 +6,19 @@ Description: Regression and time series analysis and Mathematical Statistics lib
 
 import numpy as np
 
+class statistics():
+
+    def __init__(self) -> None:
+        pass
+    
+    #TODO: write t-statistic
+    def tstatistic() -> np.float64:
+        pass
+
 class basics():
 
-    def __init__(self):
-        super.__init__()
+    def __init__(self) -> None:
+        pass
     
     @staticmethod
     def l2Norm(v: np.ndarray) -> np.float64:
@@ -75,8 +84,8 @@ class basics():
 
 class rtsa():
     
-    def __init__(self):
-        super.__init__()
+    def __init__(self) -> None:
+        pass
 
     @staticmethod
     def mse(estimate: list, original: list) -> float:
@@ -95,8 +104,8 @@ class rtsa():
 
 class mathstats():
     
-    def __init__(self):
-        super.__init__()
+    def __init__(self) -> None:
+        pass
         
     def firstProdedure():
         pass

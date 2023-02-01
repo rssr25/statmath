@@ -1,3 +1,3 @@
-# A math library inspired from Master's degree courses
+# Mathematical statistics and Regression and Time Series Analysis
 
-This is a new project which will start in a few days.
+The project updates will be given in sometime. There's not enough to update here for now.

@@ -18,7 +18,6 @@ def test_lNorm():
     
     assert basics.l1Norm(a) == 7
 
-#TODO: test sample mean, variance and covariance
 
 def test_sampleMean():
     a = np.array([46, 69, 32, 60, 52, 41])
