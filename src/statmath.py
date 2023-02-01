@@ -3,7 +3,8 @@ Written By: Rahul Sharma
 First Written on: January 30, 2023 at 16:07
 Description: Regression and time series analysis and Mathematical Statistics library
 '''
-import math
+
+import numpy as np
 
 class basics():
 
@@ -11,29 +12,29 @@ class basics():
         super.__init__()
     
     @staticmethod
-    def l2Norm(v: list) -> float:
-        return math.sqrt(sum([(i)**2 for i in v]))
+    def l2Norm(v: np.ndarray) -> np.float64:
+        return np.sqrt(np.sum(v**2))
     
     @staticmethod
-    def l1Norm(v:list) -> float:
+    def l1Norm(v: np.ndarray) -> np.float64:
         '''
         Description: L1 norm of a vector
         Input: takes a list of values (vector) as an input
         output: l1 norm of the vector
         '''
-        return abs(sum(v))
+        return np.abs(np.sum(v))
 
     @staticmethod
-    def sampleMean(v: list) -> float:
+    def sampleMean(v: np.ndarray) -> np.float64:
         '''
         Description: Calculates sample mean of list of data points
         Input: v: list of data
         Output: Sample mean of the data
         '''
-        return sum(v)/len(v)
+        return np.mean(v)
     
     @staticmethod
-    def sampleVariance(v:list, estimatedData: bool) -> float:
+    def sampleVariance(v: np.ndarray, estimatedData: bool) -> np.float64:
         '''
         Description: Calculates sample variance of list of data points
         Input: v: list of data, estimatedData: True/False if the data in list is estimated or not
@@ -44,8 +45,8 @@ class basics():
             N = len(v) - 1 #sample variance when data is estimated
         else:
             N = len(v)
-        subs = [math.pow(i - mean, 2) for i in v]
-        return (1/N)*sum(subs)
+        subs = np.power(v - mean, 2)
+        return (1/N)*np.sum(subs)
 
     @staticmethod
     def sampleCovariance(v1:list, v2:list) -> float:
@@ -77,7 +78,7 @@ class rtsa():
         assert len(estimate) == len(original), "estimates and data are not of equal length"
         N = len(estimate)
         sub = [a-b for a, b in zip(estimate, original)]
-        mse = (1/N) * sum([math.pow(k, 2) for k in sub])
+        mse = (1/N) * np.sum(np.power(sub, 2))
 
         return mse
 
