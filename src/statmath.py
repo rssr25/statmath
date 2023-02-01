@@ -47,7 +47,18 @@ class basics():
         subs = [math.pow(i - mean, 2) for i in v]
         return (1/N)*sum(subs)
 
-    
+    @staticmethod
+    def sampleCovariance(v1:list, v2:list) -> float:
+        '''
+        Description: calculates the sample covariance between two lists of data points. Assuming i.i.d. data
+        Input: two lists of equal lengths
+        Output: sample covariance of the data
+        '''
+        assert len(v1) == len(v2), "The vectors should be of equal length"
+        mean_v1 = basics.sampleMean(v1)
+        mean_v2 = basics.sampleMean(v2)
+        
+        #TODO: finish this
 
 
 class rtsa():
