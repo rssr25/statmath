@@ -45,21 +45,32 @@ class basics():
             N = len(v) - 1 #sample variance when data is estimated
         else:
             N = len(v)
+
+        print(mean)
+        print(v - mean)
         subs = np.power(v - mean, 2)
+        print(subs)
         return (1/N)*np.sum(subs)
 
     @staticmethod
-    def sampleCovariance(v1:list, v2:list) -> float:
+    def sampleCovariance(v1:np.ndarray, v2:np.ndarray) -> float:
         '''
-        Description: calculates the sample covariance between two lists of data points. Assuming i.i.d. data
+        Description: calculates the sample covariance between two lists of data points. Assuming i.i.d. data.
         Input: two lists of equal lengths
         Output: sample covariance of the data
         '''
         assert len(v1) == len(v2), "The vectors should be of equal length"
+        N = len(v1)
         mean_v1 = basics.sampleMean(v1)
         mean_v2 = basics.sampleMean(v2)
-        
-        #TODO: finish this
+
+        print(mean_v1, mean_v2)
+        print(v1 - mean_v1)
+        print(v2 - mean_v2)
+        print((v1-mean_v1) * (v2 - mean_v2))
+        print(np.sum((v1-mean_v1) * (v2 - mean_v2)))
+
+        return (1/N)*np.sum((v1-mean_v1) * (v2 - mean_v2))
 
 
 class rtsa():
