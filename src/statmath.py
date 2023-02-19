@@ -97,7 +97,7 @@ class rtsa():
         pass
 
     @staticmethod
-    def mse(estimate: list, original: list) -> float:
+    def mse(estimate: list, original: list) -> np.float64:
         '''
         Description: calculates mean-squared error between estimated and original data
         input: two lists
@@ -110,6 +110,23 @@ class rtsa():
         mse = (1/N) * np.sum(np.power(sub, 2))
 
         return mse
+
+    
+    def expectedSquaredDeviation_linearRegression(X: np.ndarray, Y: np.ndarray) -> np.float64:
+        
+        '''
+        Description: find the least squares for LR model of type y = b1 + b2x where x is the independent variable
+        Input: (X, Y) random variables
+        Output: sum(Y - b1 - b2X)^2 where X and Y are vectors 
+        '''
+        x_bar = basics.sampleMean(X)
+        y_bar = basics.sampleMean(Y)
+
+        b2_hat = np.divide(np.sum(np.multiply(Y - y_bar, X - x_bar)), np.sum(X - x_bar))
+        b1_hat  = basics.sampleMean(Y) - b2_hat*x_bar
+
+        return np.sum(Y - b1_hat - b2_hat*X)**2
+
 
 class mathstats():
     

@@ -40,3 +40,7 @@ def test_sampleCovariance():
     b = np.array([560, 505, 540])
 
     assert math.isclose(basics.sampleCovariance(a, b), 275)
+
+
+#TODO: test for t-statistic
+#TODO: test for expected squared deviation
