@@ -89,6 +89,11 @@ class basics():
         print(np.sum((v1-mean_v1) * (v2 - mean_v2)))
 
         return (1/N)*np.sum((v1-mean_v1) * (v2 - mean_v2))
+    
+    @staticmethod
+    def getRandomNoise(mu, sigma, n):
+        
+        return np.random.normal(mu, sigma, n)
 
 
 class rtsa():
