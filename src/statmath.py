@@ -5,15 +5,24 @@ Description: Regression and time series analysis and Mathematical Statistics lib
 '''
 
 import numpy as np
+
 #TODO: Test todo
 class statistics():
 
     def __init__(self) -> None:
         pass
     
-    #TODO: write t-statistic
-    def tstatistic() -> np.float64:
-        pass
+    @staticmethod
+    def tstatistic(Z: np.ndarray, mu_0:np.float64) -> np.float64:
+        '''
+        Description: Student's T-test statistic assumming i.i.d normally distributed data
+        Input: Data Z, null hypothesis mu = mu_0
+        Output: t-statistic
+        '''
+        N = len(Z)
+        Tn = np.divide(np.multiply(np.square(N), basics.sampleMean(Z) - mu_0), basics.sampleVariance(Z, True))
+        return Tn
+
 
 class basics():
 
